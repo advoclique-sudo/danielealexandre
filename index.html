@@ -679,6 +679,19 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+/* ---------- Google Ads - conversao de Contato no clique do WhatsApp (AW-17849375636) ---------- */
+document.addEventListener('click', function(e){
+  var link = e.target.closest('a[href*="wa.me"]');
+  if (link && typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17849375636/edSfCK7Ow_EcEJS3n79C',
+      'value': 1.0,
+      'currency': 'BRL',
+      'transport_type': 'beacon'
+    });
+  }
+});
+
 </script>
 </body>
 </html>
